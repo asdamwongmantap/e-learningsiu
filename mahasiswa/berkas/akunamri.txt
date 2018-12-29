@@ -1,0 +1,13 @@
+Database MySQL	        User MySQL	       Host MySQL	Penggunaan Disk, MB
+
+u621326212_asprt 	u621326212_amri 	mysql.idhostinger.com
+
+
+
+
+
+
+
+
+Database MySQL	User MySQL	Host MySQL	Penggunaan Disk, MB
+u434476522_sport	u434476522_amri	mysql.idhostinger.com	0.02

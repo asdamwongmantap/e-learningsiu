@@ -1,0 +1,22 @@
+<?php  
+mysql_connect("localhost","root","");  
+mysql_select_db("db_ebsof");  
+$result = mysql_query("select * from product");  
+$jsArray = "var prdName = new Array();\n";  
+echo 'Kode Produk : <select name="prdId" onchange="changeValue(this.value)">';  
+echo '<option>-------</option>';  
+while ($row = mysql_fetch_array($result)) {  
+    echo '<option value="' . $row['product_id'] . '">' . $row['product_id'] . '</option>';  
+    $jsArray .= "prdName['" . $row['product_id'] . "'] = {name:'" . addslashes($row['product_name']) . "',desc:'".addslashes($row['product_desc'])."'};\n";  
+}  
+echo '</select>';  
+?>  
+<br/><br />Nama Produk : <input type="text" name="prod_name" id="prd_name"/>
+<br /><br />Keterangan : <input type="text" name="prod_desc" id="prd_desc"/>
+<script type="text/javascript">  
+<?php echo $jsArray; ?>
+function changeValue(id){
+document.getElementById('prd_name').value = prdName[id].name;
+document.getElementById('prd_desc').value = prdName[id].desc;
+};
+</script>
